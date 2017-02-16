@@ -1,0 +1,45 @@
+<div class="startcityInclude" ng-controller='inforController'>
+  <div ng-click='choselocation()' class="startcity">
+    <input type="text" ng-model='locationcity' readonly>
+    <span>定位城市</span>
+    <div ng-if='startshow' class="cityimg">
+    </div>
+    <!-- <h2 ui-sref='main.home.city.confirm.infor'>确定</h2> -->
+  </div>
+  <div class="chosestartcity">
+    <div class="firstletter">
+      <h2>B</h2>
+    </div>
+    <div class="citylist">
+      <h2 ng-click='chosestartcity("北京",1)'>
+        <span>北京</span>
+        <div ng-if='city[1]' class="cityimg">
+        </div>
+      </h2>
+    </div>
+
+    <div class="firstletter">
+      <h2>G</h2>
+    </div>
+    <div class="citylist">
+      <h2 ng-click='chosestartcity("广州",2)'><span>广州</span>
+        <div ng-if='city[2]' class="cityimg">
+        </div>
+      </h2>
+    </div>
+
+    <div class="firstletter">
+      <h2>S</h2>
+    </div>
+    <div class="citylist">
+      <h2 ng-click='chosestartcity("上海",3)'><span>上海</span>
+        <div ng-if='city[3]' class="cityimg">
+        </div>
+      </h2>
+      <h2 ng-click='chosestartcity("深圳",4)'><span>深圳</span>
+        <div ng-if='city[4]' class="cityimg">
+        </div>
+      </h2>
+    </div>
+  </div>
+</div>

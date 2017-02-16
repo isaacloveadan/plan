@@ -1,0 +1,113 @@
+<div ng-init='dayindex = $index' ng-repeat='detail in details' class="detailitems">
+    <div ng-repeat='detai in detail.jing' class='detailitemsdiv'>
+        <!-- 第一天 -->
+        <div class="itemsday">
+            <h2 class="days">D<span class="bigspan"><span ng-bind='mydays(dayindex,$index,details)'></span>: {{detail.cheng}}</span>
+            </h2>
+        </div>
+        <div ng-init='outIndex=$index' ng-repeat='deta in detai.views' class="itemscontent">
+            <div data-cheng="{{detail.cheng}}" data-suibian="{{det.name}}" ng-click="gotoview(this)" repeatdone ng-repeat='det in deta' class="itemslist">
+                <div class="listright">
+                    <div class="listrightfloor1">
+                        <h2>
+                            <div class="listimg">
+                                <img src="images/jingdian.png" alt=""/>
+                            </div>
+                            <span ng-repeat='det in deta'>{{det.name}}</span>
+                        </h2>
+                        <h3>
+                            <span>￥89</span>/人</h3>
+                    </div>
+                    <div class="listake">
+                        <h3><span ng-bind='times(outIndex)'></span>|耗时:{{det.cost}}小时</h3>
+                    </div>
+                    <div style="background-image:url('http://plan.icloudinn.com/zoule/Api/Home/image/{{det.name}}.jpg');" class="listphoto"></div>
+                </div>
+                <div ng-if='taketime(detai.views,outIndex)' class="taketime">
+                    <h3>步行约{{det.walk.duration | number:0}}分钟
+                        {{det.walk.distance | number:0}}公里</h3>
+                    <h3 class="line"></h3>
+                    <div style='background-image:url("images/walk.png");' class="walk"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-if='istraffic(mday)' style='margin-top:0.37rem;' class="itemslist">
+            <div class="listright2">
+                <h2 style="align-items: center;display: flex;margin-top: auto;margin-bottom: auto;">
+                    <div class="traffic">
+                        <img src="images/traffic.png" alt=""/>
+                    </div>
+                    {{chengss[mday-1]}}--{{chengss[mday]}}</h2>
+                <h2 style="border: 1px solid #10ceda;padding: 0.04rem 0.0467rem;border-radius: 0.1rem;color: #10ceda;">更多交通</h2>
+            </div>
+        </div>
+
+        <div style='margin-top:0.39rem;' class="itemslist">
+            <div class="listright2">
+                <div class="listright2row">
+                    <h2 style="align-items: center;display: flex;margin-top: auto;margin-bottom: auto;">
+                        <div class="food">
+                            <img src="images/food.png" alt=""/>
+                        </div>
+                        今日推荐美食</h2>
+                    <div style="display:flex;align-items:center;">
+                      <h3 style='width:1.25rem;' class="line"></h3>
+                      <div style='width: 0.31rem;background-image:url("images/location.png");' class="walk"></div>
+                    </div>
+                </div>
+                <!-- <h2 class="foodtake">{{de.address}}</h2> -->
+                <div class="listphoto">
+                    <div class="slides">
+                    <div style='display:flex;flex-wrap:wrap;' ng-repeat='de in detai.food' ui-sref='main.home.detail.food({name:"{{de.name}}"})'>
+                        <div style="width:100%;">
+                          <h2 class="hotelh2">
+                              <span>{{de.name}}</span>
+                              <span ng-if='showcost(de.cost)'><span style='color:#f08300'>￥{{de.cost}}</span>/人</span>
+                          </h2>
+                          <div class='hotelxing' data-score='{{de.rating}}'>
+
+                          </div>
+                        </div>
+                        <h2 class="foodtake">{{de.address}}</h2>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="itemslist">
+            <div class="listright2">
+                <div class="listright2row">
+                    <h2 style="align-items: center;display: flex;margin-top: auto;margin-bottom: auto;">
+                        <div class="food">
+                            <img src="images/house.png" alt=""/>
+                        </div>
+                        今日推荐住宿区域</h2>
+                    <h3 style='width:1rem;margin-left:0.55rem;' class="line" style="width:1.4rem;"></h3>
+                    <div style='width:0.3rem;background-image:url("images/location.png");' class="walk"></div>
+                </div>
+                <!-- <h2 class="foodtake">{{de.address}}</h2> -->
+                <div class="listphoto">
+                    <div class="slides">
+                        <div style='display:flex;flex-wrap:wrap;' ng-repeat='de in detai.hotel' ui-sref='main.home.detail.house({name:"{{de.name}}"})'>
+                            <div style="width:100%;">
+                              <h2 class="hotelh2">
+                                  <span>{{de.name}}</span>
+                                  <span ng-if='showcost(de.lowest_price)'>
+                                      <span style='color:#f08300'>￥{{de.lowest_price}}</span>/人</span>
+                              </h2>
+                              <div class='hotelxing' data-score='{{de.rating}}'></div>
+                            </div>
+                            <h2 class="foodtake">{{de.address}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="toptitle">
+    <h2></h2>
+    <div style='background-image:url("images/share.png")' class="share"></div>
+    <!-- <h2>分享</h2> -->
+</div>

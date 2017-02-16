@@ -1,0 +1,35 @@
+<div class="choserouteInclude" ng-controller='choserouteController'>
+  <div class="myroute">
+    <div ng-click='choseone()' class="myroutetitle">
+      <h2>优化行程</h2>
+      <div ng-class={'choseback':chose1} class="chosehere">
+      </div>
+    </div>
+    <div class="myroutecontent">
+          <div id='container2' class="myroutedetail">
+            <h2 ng-if='isroute()'><span ng-repeat='city in cities2'>{{city}}<span ng-if='isheng($index)'>→</span></span></h2>
+          </div>
+    </div>
+  </div>
+  <div class="myroute">
+    <div ng-click='chosetwo()' class="myroutetitle">
+      <h2>原行程</h2>
+      <div ng-class={'choseback':chose2} class="chosehere">
+      </div>
+    </div>
+    <div class="myroutecontent">
+      <div style='height:2.2550rem' id='container' class="myroutedetail">
+
+    </div>
+  </div>
+  <div class="nextbutton">
+    <h2 ng-click='next()'>智能创建行程</h2>
+  </div>
+  </div>
+  <div ng-show='loadingif' class="loading">
+    <div class="loadingimg">
+        <img src="images/loading.png" alt=""/>
+        <h2>正在努力为你定制行程方案...</h2>
+    </div>
+</div>
+</div>

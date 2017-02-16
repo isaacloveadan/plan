@@ -1,0 +1,20 @@
+<div class="confirmlist">
+  <!-- <h2>海口
+    <span>X</span>
+  </h2>
+  <h2>三亚
+    <span>X</span>
+  </h2>
+  <h2>+</h2> -->
+  <h2 ng-repeat='chosencity in chosencities'>
+    {{chosencity.name}}
+    <span ng-click='delete($index)'>
+      <img src="images/delete2.png" alt="" />
+    </span>
+  </h2>
+  <h2 class='plusclass' ui-sref='main.home.city' ng-if='plusif'>
+    <div class="plus">
+      <img src="images/plus.png" alt="" />
+    </div>
+  </h2>
+</div>

@@ -1,0 +1,30 @@
+app.directive('infordetail',function(){
+  return{
+    restrict:'EA',
+    templateUrl:'widgets/infordetail.html',
+    replace:false,
+    scope:false,
+    controller:function($scope,myFactory){
+    },
+    link:function(scope,iElement,iAttrs,transclude){
+      angular.element(function(){
+          angular.element('#beginTime').date();
+        	angular.element('#endTime').date({theme:"datetime"});
+      });
+    }
+  }
+})
+app.directive('chosedate',function(){
+  return{
+    restrict:'EA',
+    templateUrl:'widgets/chosedate.html',
+    replace:false,
+    scope:false,
+    controller:function($scope){
+
+    },
+    link:function(scope,iElement,iAttrs,transclude){
+
+    }
+  }
+})

@@ -1,0 +1,23 @@
+<div class="confirmrecommend">
+  <!-- <h2 ng-click='addchosen("陵水")'>陵水
+    <span>+</span>
+  </h2>
+  <h2 ng-click='addchosen("万宁")'>万宁
+    <span>+</span>
+  </h2>
+  <h2 ng-click='addchosen("五指山")'>五指山
+    <span>+</span>
+  </h2>
+  <h2 ng-click='addchosen("琼海")'>琼海
+    <span>+</span>
+  </h2>
+  <h2 ng-click='addchosen("文昌")'>文昌
+    <span>+</span>
+  </h2> -->
+  <h2 ng-click='addchosen(recommendcity)' ng-repeat='recommendcity in recommendcities'>
+    {{recommendcity.name}}
+    <div class="plus">
+      <img src="images/plus.png" alt="" />
+    </div>
+  </h2>
+</div>

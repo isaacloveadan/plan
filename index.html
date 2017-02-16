@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <link rel="stylesheet" href="/styles/main.css" media="screen" title="no title">
+        <link rel="stylesheet" href="/styles/common.css" media="screen" title="no title">
+        <link rel="stylesheet" href="/styles/showBo.css" media="screen" title="no title">
+        <link rel="stylesheet" href="/styles/jquery.zySlide.css">
+    </head>
+    <body ng-controller='indexController'>
+        <div style='height:100%;' ui-view></div>
+    </body>
+
+    <!-- 一系列插件 -->
+    <script src="/scripts/plugs/jquery-1.9.1.js" charset="utf-8"></script>
+    <script src="/scripts/plugs/angular.min.js" charset="utf-8"></script>
+    <script src="/scripts/plugs/angular.ui-route.min.js" charset="utf-8"></script>
+    <script src="/scripts/plugs/angular-cookies.min.js" charset="utf-8"></script>
+    <script src="/scripts/plugs/angular-sanitize.min.js" charset="utf-8"></script>
+    <script src="/scripts/plugs/jquery.slide.js" charset="utf-8"></script>
+    <script src='/scripts/plugs/jquery.zySlide.js' charset='utf-8'></script>
+    <script src="/scripts/plugs/date.js" charset="utf-8"></script>
+    <script src="/scripts/plugs/iscroll.js" charset="utf-8"></script>
+    <script src="/scripts/plugs/showBo.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=a55a778220edfaebd38d83c0ae1d7be8"></script>
+    <script type='text/javascript' src='/scripts/plugs/rate.js'></script>
+    <script src="/scripts/plugs/lazyload.js" charset="utf-8"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" charset="utf-8"></script>
+    <!-- angular入口文件 -->
+    <script src="/scripts/app.js" charset="utf-8"></script>
+    <!-- 配置文件 -->
+    <script src="/scripts/configs/indexConfig.js" charset="utf-8"></script>
+    <!-- 一系列的控制器 -->
+    <script src="/scripts/controllers/homeController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/cityController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/confirmController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/inforController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/choserouteController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/detailController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/viewsController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/foodController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/houseController.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/dazhiController.js" charset="utf-8"></script>
+    <!-- 一系列的指令 -->
+    <script src="/scripts/directives/cityDirective.js" charset="utf-8"></script>
+    <script src="/scripts/directives/confirmDirective.js" charset="utf-8"></script>
+    <script src="/scripts/directives/inforDirective.js" charset="utf-8"></script>
+    <script src="/scripts/directives/homedirective.js" charset="utf-8"></script>
+    <script src="/scripts/directives/detailDirective.js" charset="utf-8"></script>
+    <script src="/scripts/directives/viewsDirective.js" charset="utf-8"></script>
+    <script src="/scripts/directives/foodDirective.js" charset="utf-8"></script>
+    <script src="/scripts/directives/houseDirective.js" charset="utf-8"></script>
+    <!-- 自定义服务 -->
+    <script src="/scripts/services/myService.js" charset="utf-8"></script>
+</html>

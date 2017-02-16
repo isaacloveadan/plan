@@ -1,0 +1,80 @@
+<div class="infordetail">
+  <div class="inforitems firstinfor">
+    <h2 class="infort">游玩偏好:</h2>
+    <div class="inforitemsr">
+      <h2 class='chosenh2' ng-click='chosenprefer(1)' ng-class="{'chosenprefer':chose1}">悠闲</h2>
+      <h2 style='color:#a4a4a4;'>|</h2>
+      <h2 class='chosenh2' ng-click='chosenprefer(2)' ng-class="{'chosenprefer':chose2}">适中</h2>
+      <h2 style='color:#a4a4a4;'>|</h2>
+      <h2 class='chosenh2' ng-click='chosenprefer(3)' ng-class="{'chosenprefer':chose3}">紧凑</h2>
+    </div>
+  </div>
+  <div class="detail1">
+    <div ng-click='gotostart()' class="inforitems">
+      <div class="inforcontainer">
+        <h2 class="infort">
+          <div class="detail1img">
+            <img src="images/chufa.png" alt="" />
+          </div>
+          出发地:</h2>
+        <h2 class="detailrt">
+          {{startcity}}
+          <div class="detail2img">
+            <img src="images/detailright.png" alt="" />
+          </div>
+        </h2>
+      </div>
+    </div>
+    <div ui-sref='main.home.city.confirm.infor.backcity' class="inforitems">
+      <div class="inforcontainer">
+        <h2 class="infort">
+          <div class='detail1img'>
+            <img src="images/fanhui.png" alt="" />
+          </div>
+          返回地:</h2>
+        <h2 class="detailrt">
+          {{backcity}}
+          <div class="detail2img">
+            <img src="images/detailright.png" alt="" />
+          </div>
+        </h2>
+      </div>
+    </div>
+    <div ng-click='showchosedate()' class="inforitems">
+      <h2 class="infort">
+        <div class="detail1img">
+          <img src="images/yuefen.png" alt="" />
+        </div>
+        出行月份:</h2>
+      <h2 class="detailrt" id="beginTime">
+        <span>{{nowdate}}月</span>
+        <div class="detail2img">
+          <img src="images/detailright.png" alt="" />
+        </div>
+      </h2>
+    </div>
+  </div>
+  <div style='margin-top: 0.1rem;border-left: 0px none;border-right: 0px none;border-top:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;' class="inforitems">
+    <h2 class='extra infort'>你想去城市的游玩天数</h2>
+    <div class="extrainfor" ng-repeat='chosencity in chosencities'>
+      <h2>{{chosencity.name}}</h2>
+      <div>
+        <div ng-click='minus(chosencity.days,$index)' class="minus">
+          <!-- <img src="images/minus.png" alt="" /> -->
+          <div class="mpimg">
+
+          </div>
+        </div>
+        <h2>{{chosencity.days}}</h2>
+        <div ng-click='plus(chosencity.days,$index)' class="plus1" >
+          <img src="images/plus1.png" alt="" />
+        </div>
+        <div class="delete" ng-click='delete($index)'>
+          <img src="images/delete.png" alt="" />
+        </div>
+        <!-- <h2 ng-click='delete($index)'>删除</h2> -->
+      </div>
+    </div>
+  </div>
+
+</div>

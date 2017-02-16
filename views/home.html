@@ -1,0 +1,28 @@
+<div class="homeInclude" ng-controller='homeController'>
+  <slidemenu></slidemenu>
+    <div class="iconclass">
+      <h2 style='background-image:url("{{userimg}}")' ng-click='clickmy()' class="my"></h2>
+    </div>
+    <div class="homecontent">
+      <div style='background-image:url({{backgroundim}})' ui-sref='main.home.detail({which:"old"})' class="homeresult">
+          <h1>{{firstcity2}}...{{lastcity2}}{{days2}}日行程计划</h1>
+          <h3>指尖旅行出品</h3>
+          <div class="resultdetail">
+            <ul>
+               <span ng-init='detailindex = $index' ng-repeat='detailplan in detailplans2'>
+                <li ng-repeat='detailpla in detailplan.jing'>
+                  第<span ng-bind='mydays2(detailindex,$index,detailplans2)'></span>天 {{detailplan.cheng}}
+                  <span ng-repeat='detailpl in detailpla.views'>
+                    <span ng-repeat='detailp in detailpl'>{{detailp.name}}</span>
+                  </span>
+                </li>
+               </span>
+            </ul>
+          </div>
+      </div>
+
+      <div class="homebottom">
+        <h1 ng-click='new()'>+ 新旅途</h1>
+      </div>
+    </div>
+</div>

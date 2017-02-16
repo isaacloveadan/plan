@@ -1,0 +1,19 @@
+<div ui-sref='main.home.detail({which:"new"})' class="dazhiInclude" ng-controller='dazhiController'>
+  <div class="homeresult1">
+    <h1>{{firstcity}}...{{lastcity}}{{days}}日行程计划</h1>
+    <h3>指尖旅行出品</h3>
+    <div class="resultdetail">
+      <ul>
+         <span ng-init='detailindex = $index' ng-repeat='detailplan in detailplans'>
+          <li ng-repeat='detailpla in detailplan.jing'>
+            <!-- 第{{detailindex+1}}天 {{detailplan.cheng}} -->
+            第<span ng-bind='mydays(detailindex,$index,detailplans)'></span>天 {{detailplan.cheng}}
+            <span ng-repeat='detailpl in detailpla.views'>
+              <span ng-repeat='detailp in detailpl'>{{detailp.name}}</span>
+            </span>
+          </li>
+         </span>
+      </ul>
+    </div>
+  </div>
+</div>
